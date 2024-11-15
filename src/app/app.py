@@ -118,7 +118,14 @@ pass
 
     # 10. Calcula la serie de Fibonacci hasta n términos
 def fibonacci(n):
-        """
+    if n == 0:
+        return []
+    fib_sequence = [0, 1]
+    for i in range(2, n):
+        fib_sequence.append(fib_sequence[-1] + fib_sequence[-2])
+    return fib_sequence[:n]
+
+"""
         Genera y retorna una lista con los primeros 'n' términos de la serie de Fibonacci.
         """
-        pass
+pass
