@@ -24,11 +24,13 @@ class App:
 
     # 2. Cuenta los números pares en un rango dado
     def contar_pares(inicio, fin):
-        """
+     return len([num for num in range(inicio, fin + 1) if num % 2 == 0])
+       
+     """
         Cuenta la cantidad de números pares en el rango desde 'inicio' hasta 'fin' (inclusive).
         Retorna la cantidad de números pares.
         """
-        pass
+    pass
 
     # 3. Encuentra el número máximo en una lista que sea múltiplo de un valor dado
     def maximo_multiplo(lista, multiplo):
