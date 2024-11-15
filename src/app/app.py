@@ -57,18 +57,20 @@ pass
 
     # 4. Verifica si una palabra es palíndroma (se lee igual en ambos sentidos)
 def es_palindromo(palabra):
-        """
+    return palabra == palabra[::-1]
+"""
         Verifica si la palabra es un palíndromo (igual al leerla al revés).
         Retorna True si es palíndromo, de lo contrario, False.
         """
-        pass
+pass
 
     # 5. Calcula la suma de los primeros n números impares
 def suma_primeros_impares(n):
-        """
+    return sum(2 * i + 1 for i in range(n))
+"""
         Calcula y retorna la suma de los primeros 'n' números impares.
         """
-        pass
+pass
 
     # 6. Verifica si todos los elementos de una lista son únicos
 def elementos_unicos(lista):
