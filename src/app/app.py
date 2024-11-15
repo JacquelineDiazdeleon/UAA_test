@@ -104,11 +104,17 @@ pass
 
     # 9. Encuentra el segundo número mayor en una lista
 def segundo_mayor(lista):
-        """
+    if len(lista) < 2:
+        return None
+    lista = list(set(lista))
+    lista.sort(reverse=True)
+    return lista[1] if len(lista) > 1 else None
+
+"""
         Encuentra y retorna el segundo número más grande en la lista.
         Si no existe, retorna None.
         """
-        pass
+pass
 
     # 10. Calcula la serie de Fibonacci hasta n términos
 def fibonacci(n):
