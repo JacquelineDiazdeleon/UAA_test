@@ -95,10 +95,12 @@ pass
 
     # 8. Cuenta la cantidad de vocales en una cadena
 def contar_vocales(cadena):
-        """
+    return sum(1 for char in cadena.lower() if char in "aeiou")
+
+"""
         Cuenta y retorna la cantidad de vocales en la cadena.
         """
-        pass
+pass
 
     # 9. Encuentra el segundo número mayor en una lista
 def segundo_mayor(lista):
