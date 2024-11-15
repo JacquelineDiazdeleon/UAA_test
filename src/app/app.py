@@ -45,10 +45,14 @@ pass
 
     # 3. Encuentra el número máximo en una lista que sea múltiplo de un valor dado
 def maximo_multiplo(lista, multiplo):
- """
-        Encuentra y retorna el valor máximo de la lista que es múltiplo del parámetro 'multiplo'.
-        Si no hay múltiplos, retorna None.
+    multiplos = [num for num in lista if num % multiplo == 0]
+    return max(multiplos) if multiplos else None
+
 """
+    Encuentra y retorna el valor máximo de la lista que es múltiplo del parámetro 'multiplo'.
+    Si no hay múltiplos, retorna None.
+"""
+
 pass
 
     # 4. Verifica si una palabra es palíndroma (se lee igual en ambos sentidos)
