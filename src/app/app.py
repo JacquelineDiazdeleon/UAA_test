@@ -74,11 +74,12 @@ pass
 
     # 6. Verifica si todos los elementos de una lista son únicos
 def elementos_unicos(lista):
-        """
+    return len(lista) == len(set(lista))
+"""
         Verifica si todos los elementos de la lista son únicos.
         Retorna True si son únicos, de lo contrario, False.
         """
-        pass
+pass
 
     # 7. Calcula el factorial de un número sin usar recursión
 def calcular_factorial(numero):
