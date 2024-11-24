@@ -15,117 +15,76 @@ class App:
         return 0
 
     # 1. Verifica si una lista contiene un número primo
+@staticmethod
 def contiene_numero_primo(lista):
-    """
-    Verifica si hay al menos un número primo en la lista.
-    Retorna True si hay un número primo, de lo contrario, False.
-    """
-    def es_primo(num):
-        if num < 2:
-            return False
-        for i in range(2, int(num**0.5) + 1):
-            if num % i == 0:
+        def es_primo(n):
+            if n < 2:
                 return False
-        return True
-    
-    return any(es_primo(num) for num in lista)
+            for i in range(2, int(n**0.5) + 1):
+                if n % i == 0:
+                    return False
+            return True
 
+        return any(es_primo(num) for num in lista)
 
-pass
-
-    # 2. Cuenta los números pares en un rango dado
-"""
-    Cuenta la cantidad de números pares en el rango desde 'inicio' hasta 'fin' (inclusive).
-    Retorna la cantidad de números pares.
-"""
+    # Método para contar números pares en un rango
+@staticmethod
 def contar_pares(inicio, fin):
-    return sum(1 for num in range(inicio, fin + 1) if num % 2 == 0)
+        return len([x for x in range(inicio, fin + 1) if x % 2 == 0])
 
-pass
+    # Método para encontrar el máximo múltiplo de un número en una lista
+@staticmethod
+def maximo_multiplo(lista, num):
+        multiplos = [x for x in lista if x % num == 0]
+        return max(multiplos) if multiplos else None
 
-    # 3. Encuentra el número máximo en una lista que sea múltiplo de un valor dado
-def maximo_multiplo(lista, multiplo):
-    multiplos = [num for num in lista if num % multiplo == 0]
-    return max(multiplos) if multiplos else None
+    # Método para verificar si una cadena es un palíndromo
+@staticmethod
+def es_palindromo(cadena):
+        return cadena == cadena[::-1]
 
-"""
-    Encuentra y retorna el valor máximo de la lista que es múltiplo del parámetro 'multiplo'.
-    Si no hay múltiplos, retorna None.
-"""
-
-pass
-
-    # 4. Verifica si una palabra es palíndroma (se lee igual en ambos sentidos)
-def es_palindromo(palabra):
-    return palabra == palabra[::-1]
-"""
-        Verifica si la palabra es un palíndromo (igual al leerla al revés).
-        Retorna True si es palíndromo, de lo contrario, False.
-        """
-pass
-
-    # 5. Calcula la suma de los primeros n números impares
+    # Método para sumar los primeros n números impares
+@staticmethod
 def suma_primeros_impares(n):
-    return sum(2 * i + 1 for i in range(n))
-"""
-        Calcula y retorna la suma de los primeros 'n' números impares.
-        """
-pass
+        return sum([x for x in range(1, 2 * n, 2)])
 
-    # 6. Verifica si todos los elementos de una lista son únicos
+    # Método para verificar si todos los elementos de una lista son únicos
+@staticmethod
 def elementos_unicos(lista):
-    return len(lista) == len(set(lista))
-"""
-        Verifica si todos los elementos de la lista son únicos.
-        Retorna True si son únicos, de lo contrario, False.
-        """
-pass
+        return len(lista) == len(set(lista))
 
-    # 7. Calcula el factorial de un número sin usar recursión
-def calcular_factorial(numero):
-    factorial = 1
-    for i in range(2, numero + 1):
-        factorial *= i
-    return factorial
+    # Método para calcular el factorial de un número
+@staticmethod
+def calcular_factorial(n):
+        if n == 0 or n == 1:
+            return 1
+        factorial = 1
+        for i in range(2, n + 1):
+            factorial *= i
+        return factorial
 
-"""
-        Calcula y retorna el factorial de 'numero' usando un ciclo.
-        """
-pass
-
-    # 8. Cuenta la cantidad de vocales en una cadena
+    # Método para contar vocales en una cadena
+@staticmethod
 def contar_vocales(cadena):
-    return sum(1 for char in cadena.lower() if char in "aeiou")
+        return sum(1 for char in cadena.lower() if char in 'aeiou')
 
-"""
-        Cuenta y retorna la cantidad de vocales en la cadena.
-        """
-pass
-
-    # 9. Encuentra el segundo número mayor en una lista
+    # Método para encontrar el segundo número mayor en una lista
+@staticmethod
 def segundo_mayor(lista):
-    if len(lista) < 2:
-        return None
-    lista = list(set(lista))
-    lista.sort(reverse=True)
-    return lista[1] if len(lista) > 1 else None
+        if len(lista) < 2:
+            return None
+        lista_unica = list(set(lista))
+        lista_unica.sort(reverse=True)
+        return lista_unica[1] if len(lista_unica) > 1 else None
 
-"""
-        Encuentra y retorna el segundo número más grande en la lista.
-        Si no existe, retorna None.
-        """
-pass
-
-    # 10. Calcula la serie de Fibonacci hasta n términos
+    # Método para generar una secuencia de Fibonacci
+@staticmethod
 def fibonacci(n):
-    if n == 0:
-        return []
-    fib_sequence = [0, 1]
-    for i in range(2, n):
-        fib_sequence.append(fib_sequence[-1] + fib_sequence[-2])
-    return fib_sequence[:n]
-
-"""
-        Genera y retorna una lista con los primeros 'n' términos de la serie de Fibonacci.
-        """
-pass
+        if n == 0:
+            return []
+        if n == 1:
+            return [0]
+        secuencia = [0, 1]
+        for i in range(2, n):
+            secuencia.append(secuencia[-1] + secuencia[-2])
+        return secuencia
